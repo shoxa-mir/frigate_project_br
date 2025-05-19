@@ -1,0 +1,13 @@
+mqtt:
+  enabled: False
+
+cameras:
+  frontdoor: # <------ Name the camera
+    enabled: True
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:visionin123@192.168.1.183:554/main # <----- The stream you want to use for detection
+          roles:
+            - detect
+    detect:
+      enabled: False # <---- disable detection until you have a working camera feed

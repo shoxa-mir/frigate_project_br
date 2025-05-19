@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  frigate:
+    container_name: frigate
+    restart: unless-stopped
+    stop_grace_period: 30s
+    image: ghcr.io/blakeblackshear/frigate:stable
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,video,utility
+    shm_size: '512m'
+    volumes:
+      - ./config:/config
+      - ./storage:/media/frigate
+      - type: tmpfsr
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    ports:
+      - "8971:8971"
+      - "8554:8554" # RTSP
+      - "1883:1883" # MQTT

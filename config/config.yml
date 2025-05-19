@@ -1,0 +1,29 @@
+mqtt:
+  enabled: true
+  host: localhost
+  user: mqttuser
+  password: mqttpassword
+
+go2rtc:
+  rtsp:
+    username: "admin"
+    password: "pass"
+  streams:
+    name_your_rtsp_cam:
+      - rtsp://admin:pass@192.168.1.100:554/main
+      
+cameras:
+  name_your_rtsp_cam:
+    enabled: true
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:pass@127.0.0.1:8554/name_your_rtsp_cam
+          roles:
+            - detect
+
+detectors:
+  cpu:
+    type: cpu
+    command: python3 /config/fake.py
+
+version: 0.15-1
