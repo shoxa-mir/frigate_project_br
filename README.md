@@ -16,3 +16,11 @@ docker restart frigate
 ```bash
 docker logs frigate
 ```
+
+
+
+# To reset admin user password in config.yml file add following
+```config
+auth:
+  reset_admin_password: true
+```
