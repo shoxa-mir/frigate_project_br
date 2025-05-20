@@ -1,18 +1,18 @@
 # frigate_project_br
 
 ## Compose up/down docker container
-'''bash
+```bash
 docker-compose up -d
 
 docker-compose down
-'''
+```
 
 ## Restart Frigate container
-'''bash
+```bash
 docker restart frigate
-'''
+```
 
 ## Docker log for admin pw
-'''bash
+```bash
 docker logs frigate
-'''
+```
