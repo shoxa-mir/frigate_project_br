@@ -2,9 +2,9 @@
 
 ## Compose up/down docker container
 ```bash
-docker-compose up -d
+docker compose up -d
 
-docker-compose down
+docker compose down
 ```
 
 ## Restart Frigate container
